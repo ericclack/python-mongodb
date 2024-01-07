@@ -17,7 +17,7 @@ with open(import_file) as data_file:
 print("%s records to import" % len(import_data))
 
 # Test first 3
-for r in import_data[]:
+for r in import_data:
     if import_limit <= 0: break
     
     exists = db.photos.find_one({ '_id': r['_id']})
