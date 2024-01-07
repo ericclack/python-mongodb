@@ -8,6 +8,7 @@ Because my build of MongoDB doesn't have mongoimport
 python3 -m venv env-python-mongodb
 source env-python-mongodb/bin/activate
 python -m pip install pymongo
+python -m pip install python-dateutil
 ```
 
 # Docs
