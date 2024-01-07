@@ -2,7 +2,7 @@
 
 Because my build of MongoDB doesn't have mongoimport
 
-# Set up venv
+## Set up venv
 
 ```
 python3 -m venv env-python-mongodb
@@ -11,7 +11,22 @@ python -m pip install pymongo
 python -m pip install python-dateutil
 ```
 
-# Docs
+## Create a date-lookup file
+
+```
+data/date-lookup.json:
+
+[
+    {
+	"_id": "media/2017/4/18/id-of-photo1.jpg",
+	"datetime": "2010-12-18T10:14:00.0Z" },
+    {
+	"_id": "media/2017/7/14/id-of-photo2.jpg",
+	"datetime": "2017-07-14T21:30:00.0Z"}
+]
+```
+
+## Docs
 
 https://pymongo.readthedocs.io/en/stable/tutorial.html
 
