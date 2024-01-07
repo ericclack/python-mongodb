@@ -16,7 +16,7 @@ with open(import_file) as data_file:
 print("%s records to import" % len(import_data))
 
 # Test first 3
-for r in import_data[:3]:
+for r in import_data[:10]:
     exists = db.photos.find_one({ '_id': r['_id']})
     if exists:
         print("Already exists: %s" % exists)
