@@ -1,3 +1,4 @@
+import datetime
 import json
 import pymongo
 
@@ -18,6 +19,12 @@ print("%s records to import" % len(import_data))
 for r in import_data[:3]:
     exists = db.photos.find_one({ '_id': r['_id']})
     if exists:
-        print("Found %s in database already" % exists)
+        print("Already exists: %s" % exists)
     else:
-        print("New record %s to import" % r['_id'])
+        print("Importing new record %s" % r['_id'])
+        # Convert date format and handle negative dates too
+        ms = r['datetime']['$date']
+        dt = datetime.datetime(1970, 1, 1) + datetime.timedelta(milliseconds=ms)
+        r['datetime'] = dt
+        db.photos.insert_one(r)
+        
