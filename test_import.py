@@ -4,6 +4,7 @@ import pymongo
 
 import_file = "data/photo-bank2023-12-29_16:52.json"
 import_data = []
+import_limit = 1
 
 client = pymongo.MongoClient()
 db = client["photo-bank"]
@@ -16,7 +17,9 @@ with open(import_file) as data_file:
 print("%s records to import" % len(import_data))
 
 # Test first 3
-for r in import_data[:10]:
+for r in import_data[]:
+    if import_limit <= 0: break
+    
     exists = db.photos.find_one({ '_id': r['_id']})
     if exists:
         print("Already exists: %s" % exists)
@@ -26,5 +29,6 @@ for r in import_data[:10]:
         ms = r['datetime']['$date']
         dt = datetime.datetime(1970, 1, 1) + datetime.timedelta(milliseconds=ms)
         r['datetime'] = dt
+
         db.photos.insert_one(r)
-        
+        import_limit -= 1
