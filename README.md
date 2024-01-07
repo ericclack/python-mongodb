@@ -2,6 +2,14 @@
 
 Because my build of MongoDB doesn't have mongoimport
 
+# Set up venv
+
+```
+python3 -m venv env-python-mongodb
+source env-python-mongodb/bin/activate
+python -m pip install pymongo
+```
+
 # Docs
 
 https://pymongo.readthedocs.io/en/stable/tutorial.html
