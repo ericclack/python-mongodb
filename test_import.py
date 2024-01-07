@@ -22,7 +22,7 @@ for r in import_data:
     
     exists = db.photos.find_one({ '_id': r['_id']})
     if exists:
-        print("Already exists: %s" % exists)
+        print("Already exists: %s" % exists['_id'])
     else:
         print("Importing new record %s" % r['_id'])
         # Convert date format and handle negative dates too
