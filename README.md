@@ -28,7 +28,11 @@ data/date-lookup.json:
 ]
 ```
 
-## Docs
+## Run the tests, then import
+
+TBC, but see the code. 
+
+## Reference Docs for the libraries I'm using
 
 https://pymongo.readthedocs.io/en/stable/tutorial.html
 
