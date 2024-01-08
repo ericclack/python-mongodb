@@ -13,6 +13,8 @@ python -m pip install python-dateutil
 
 ## Create a date-lookup file
 
+Because some of my records are missing a date.
+
 ```
 data/date-lookup.json:
 
