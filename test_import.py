@@ -15,14 +15,16 @@ client = pymongo.MongoClient()
 db = client["photo-bank"]
 
 with open(import_file) as data_file:
-    # Not quite JSON format, so read each line in turn
+    # JSON record on each line
     for line in data_file:
         import_data.append(json.loads(line))
 
-with open(date_lookup_file) as lookup_file:
-    for d in json.load(lookup_file):
-        date_lookup[d['_id']] = dateutil.parser.isoparse(d['datetime'])
-    
+try:
+    with open(date_lookup_file) as lookup_file:
+        for d in json.load(lookup_file):
+            date_lookup[d['_id']] = dateutil.parser.isoparse(d['datetime'])
+except FileNotFoundError:
+    print("Didn't find %s" % date_lookup_file)
         
 print("%s records to import" % len(import_data))
 
