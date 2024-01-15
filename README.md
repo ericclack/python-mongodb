@@ -2,7 +2,7 @@
 
 Because my build of MongoDB doesn't have mongoimport
 
-## Set up venv
+## Set up venv and add libraries
 
 ```
 python3 -m venv env-python-mongodb
@@ -24,6 +24,21 @@ data/date-lookup.json:
 	"_id": "media/2017/7/14/id-of-photo2.jpg",
 	"datetime": "2017-07-14T21:30:00.0Z"}
 ]
+```
+
+## Symlink up your backup file
+
+```
+cd path/to/python-mongodb
+cd data
+ln -s path/to/backup.json backup.json
+```
+
+## Run it
+
+```
+source env-python-mongodb/bin/activate
+python test_import.py
 ```
 
 ## Docs
