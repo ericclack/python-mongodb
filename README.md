@@ -13,6 +13,8 @@ python -m pip install python-dateutil
 
 ## Create a date-lookup file
 
+Because some of my records are missing a date.
+
 ```
 data/date-lookup.json:
 
@@ -41,7 +43,11 @@ source env-python-mongodb/bin/activate
 python test_import.py
 ```
 
-## Docs
+## Run the tests, then import
+
+TBC, but see the code. 
+
+## Reference Docs for the libraries I'm using
 
 https://pymongo.readthedocs.io/en/stable/tutorial.html
 
