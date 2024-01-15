@@ -3,8 +3,7 @@ import dateutil.parser
 import json
 import pymongo
 
-import_file = "data/photo-bank2023-12-29_16:52.json"
-#import_file = "data/test-data.json"
+import_file = "data/backup.json"
 
 import_data = []
 import_limit = 10
